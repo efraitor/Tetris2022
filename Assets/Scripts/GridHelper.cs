@@ -26,4 +26,21 @@ public class GridHelper : MonoBehaviour
         //Devuelve un nuevo Vector2 ya redondeado en X e Y
         return new Vector2(Mathf.Round(v.x), Mathf.Round(v.y)); //Mathf.Round -> redondea al número entero más próximo
     }
+
+    //Método que dada una posición comprobamos si esta pieza está dentro de los bordes del juego. Nos devolverá si es cierto o no
+    public static bool IsInsideBorders(Vector2 pos)
+    {
+        //Si ambas coordenadas son positivas y no se pasan por la derecha
+        if (pos.x >= 2 && pos.y >= 0 && pos.x < w + 2)
+        {
+            //La pieza está dentro de la zona de juego
+            return true;
+        }
+        //Si lo de arriba no se cumple
+        else
+        {
+            //La pieza está fuera de la zona de juego
+            return false;
+        }
+    }
 }
