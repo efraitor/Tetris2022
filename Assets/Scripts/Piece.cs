@@ -66,7 +66,7 @@ public class Piece : MonoBehaviour
                 //Revierto el movimiento hacia abajo sumando uno hacia arriba
                 this.transform.position += new Vector3(0, 1, 0);
                 //Si ya no pudiese bajar más, habría que detectar si es momento de borrar una fila
-                //GridHelper.DeleteAllFullRows();
+                GridHelper.DeleteAllFullRows();
                 //Hacemos que aparezca una pieza nueva, llamando al PieceSpawner a su método
                 FindObjectOfType<PieceSpawner>().SpawnNextPiece();//Busca un objeto de ese tipo para poder usar sus métodos y variables
                 //Deshabilitamos este script para que esta pieza no vuelva a moverse
